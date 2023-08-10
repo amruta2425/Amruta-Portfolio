@@ -1,0 +1,1 @@
+{"version":3,"sources":["../partials/_colors.scss","reset.scss","reset.css","mixins.scss"],"names":[],"mappings":"AAAA,aAAA;ACGA;EACC,SAAA;EACA,UAAA;EACA,sBAAA;EACA,uBAAA;ACDD;;ADIA;EACC,iBAAA;EACA,yBDVgB;ECWhB,WDTO;AEQR;;ADIA;EACC,kCAAA;ACDD;;ADIA;EEjBC,qBAAA;EACA,WAAA;ADiBD","file":"reset.css"}

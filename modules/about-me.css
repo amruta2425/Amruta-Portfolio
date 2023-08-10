@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Playfair+Display:ital,wght@0,500;0,800;0,900;1,500;1,900&family=Spartan:wght@200;300;400;500&display=swap");
+/* SCSS HEX */
+@media only screen and (min-width: 771px) {
+  .about-me__photo {
+    background-color: black;
+    width: 30%;
+    height: 30%;
+  }
+  .about-me__photo img {
+    position: relative;
+    left: -50px;
+    top: 40px;
+    width: 50%;
+    height: auto;
+  }
+  .about-me__text {
+    padding-left: 50px;
+    width: 55%;
+  }
+  .about-me__text p {
+    font-size: 30px;
+    margin-bottom: 25px;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .about-me__photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .about-me__photo img {
+    width: 60%;
+  }
+  .about-me__text {
+    text-align: center;
+    margin-top: 3vh;
+  }
+  .about-me__text p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+}/*# sourceMappingURL=about-me.css.map */

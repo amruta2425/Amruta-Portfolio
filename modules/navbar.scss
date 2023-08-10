@@ -1,0 +1,250 @@
+@use "./../partials/colors";
+@use "./../partials/device";
+@use "./mixins.scss";
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Playfair+Display:ital,wght@0,500;0,800;0,900;1,500;1,900&family=Spartan:wght@200;300;400;500&display=swap");
+
+.navbar {
+	box-sizing: border-box;
+	position: fixed;
+	@include mixins.flex($just-cont: flex-end);
+	height: 65px;
+	width: 100vw;
+	padding: 0 3vw;
+	z-index: 10;
+	color: colors.$white;
+	transition: background 0.4s ease-out;
+
+	@media only screen and (max-width: device.$tablet) {
+	}
+
+	.nav-list {
+		font-family: "Cutive Mono", monospace;
+		list-style-type: none;
+		display: flex;
+
+		&__item {
+			transition: opacity 0.4s ease-in-out,
+				transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+			&:nth-of-type(2) {
+				transition-delay: 0.2s;
+			}
+
+			&:nth-of-type(3) {
+				transition-delay: 0.3s;
+			}
+
+			a {
+				margin: 0.2rem;
+				padding: 1rem;
+				transition: ease 0.5s;
+				font-size: 33px;
+
+				&:hover {
+					letter-spacing: 0.3rem;
+				}
+			}
+		}
+
+		@media only screen and (max-width: device.$tablet) {
+			position: fixed;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			flex-direction: column;
+			justify-content: space-evenly;
+			align-items: center;
+			padding: 10rem 0;
+			width: 100vw;
+			height: 100vh;
+			font-size: 3rem;
+			color: colors.$white;
+			background-color: colors.$purple-navy;
+			transition: opacity 0.8s 0.5s, clip-path 1s 0.5s;
+			clip-path: circle(200px at top right);
+
+			&__item {
+				opacity: 0;
+				transform: translateX(100%);
+				width: 100%;
+				text-align: center;
+
+				a {
+					display: block;
+					padding: 2rem 0;
+				}
+			}
+		}
+	}
+
+	.menu-icon {
+		position: relative;
+		margin: 0 1rem;
+		cursor: pointer;
+		z-index: 10;
+		display: none;
+
+		&__line {
+			display: block;
+			position: relative;
+			background-color: colors.$white;
+			height: 2px;
+			width: 25px;
+			border-radius: 0.3rem;
+			transition: background 0.8s ease;
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				border-radius: 4px;
+				background: colors.$white;
+				transition: background 0.8s ease;
+			}
+
+			&::before {
+				transform: translateY(-5px);
+			}
+
+			&::after {
+				transform: translateY(5px);
+			}
+		}
+
+		@media only screen and (max-width: device.$tablet) {
+			display: block;
+			&__line {
+				animation: closeM 0.6s backwards;
+				animation-direction: reverse;
+
+				&::before {
+					animation: closeT 0.6s backwards;
+					animation-direction: reverse;
+				}
+
+				&::after {
+					animation: closeB 0.6s backwards;
+					animation-direction: reverse;
+				}
+			}
+		}
+	}
+
+	.menu-btn {
+		display: none;
+
+		@media only screen and (max-width: device.$tablet) {
+			&:checked ~ .nav-list {
+				opacity: 0.95;
+				clip-path: circle(100% at center);
+
+				.nav-list__item {
+					opacity: 1;
+					transform: translateX(0);
+					transition: opacity 0.4s ease-in-out,
+						transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+					&:nth-child(1) {
+						transition-delay: 0.7s;
+					}
+					&:nth-child(2) {
+						transition-delay: 0.8s;
+					}
+					&:nth-child(3) {
+						transition-delay: 0.9s;
+					}
+				}
+			}
+
+			&:checked ~ .menu-icon {
+				border-radius: 50%;
+				.menu-icon__line {
+					animation: openM 0.6s forwards;
+
+					&::before {
+						animation: openT 0.6s forwards;
+					}
+
+					&::after {
+						animation: openB 0.6s forwards;
+					}
+				}
+			}
+		}
+	}
+}
+
+.nav-scrolled {
+	@media only screen and (min-width: device.$tablet) {
+		background-color: colors.$pale-violet-red;
+		box-shadow: 0 3px 20px rgba(black, 0.2);
+		width: 100vw;
+	}
+}
+
+@keyframes openT {
+	0% {
+		transform: translateY(-5px) rotate(0deg);
+	}
+	50% {
+		transform: translateY(0px) rotate(0deg);
+	}
+	100% {
+		transform: translateY(0px) rotate(90deg);
+	}
+}
+
+@keyframes openM {
+	50% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(45deg);
+	}
+}
+
+@keyframes openB {
+	0% {
+		transform: translateY(5px) rotate(0deg);
+	}
+	50% {
+		transform: translateY(0px) rotate(0deg);
+	}
+	100% {
+		transform: translateY(0px) rotate(90deg);
+	}
+}
+
+@keyframes closeT {
+	0% {
+		transform: translateY(-5px) rotate(0deg);
+	}
+	50% {
+		transform: translateY(0px) rotate(0deg);
+	}
+	100% {
+		transform: translateY(0px) rotate(90deg);
+	}
+}
+@keyframes closeM {
+	50% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(45deg);
+	}
+}
+
+@keyframes closeB {
+	0% {
+		transform: translateY(5px) rotate(0deg);
+	}
+	50% {
+		transform: translateY(0px) rotate(0deg);
+	}
+	100% {
+		transform: translateY(0px) rotate(90deg);
+	}
+}

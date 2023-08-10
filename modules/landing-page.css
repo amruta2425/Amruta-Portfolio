@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Playfair+Display:ital,wght@0,500;0,800;0,900;1,500;1,900&family=Spartan:wght@200;300;400;500&display=swap");
+/* SCSS HEX */
+.landing-page {
+  padding: 0 10vw;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.landing-page__title {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-style: italic;
+  margin-top: 30vh;
+  font-size: 5rem;
+}
+.landing-page__icon {
+  margin-bottom: 10vh;
+}
+@media only screen and (min-width: 501px) and (max-width: 770px) {
+  .landing-page {
+    height: 100vh;
+  }
+  .landing-page__title {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    font-style: italic;
+    margin-top: 30vh;
+    font-size: 3.7rem;
+  }
+  .landing-page__icon {
+    margin-bottom: 2vh;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .landing-page__title {
+    margin-top: 35vh;
+    font-size: 2.2rem;
+  }
+}
+
+.bounce {
+  animation: bounce 1.8s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-50px);
+  }
+  60% {
+    transform: translateY(-20px);
+  }
+}/*# sourceMappingURL=landing-page.css.map */

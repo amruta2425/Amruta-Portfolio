@@ -1,0 +1,49 @@
+@use "./../partials/colors";
+@use "./../partials/device";
+@use "./mixins.scss";
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Playfair+Display:ital,wght@0,500;0,800;0,900;1,500;1,900&family=Spartan:wght@200;300;400;500&display=swap");
+
+.about-me {
+	@media only screen and (min-width: (device.$tablet+1)) {
+		&__photo {
+			background-color: colors.$purple-navy;
+			width: 30%;
+			height:30%;
+			img {
+				position: relative;
+				left: -50px;
+				top: 40px;
+				width: 50%;
+				height: auto;
+			}
+		}
+
+		&__text {
+			padding-left: 50px;
+			width: 55%;
+			p {
+				font-size: 30px;
+				margin-bottom: 25px;
+			}
+		}
+	}
+
+	@media only screen and (max-width: device.$tablet) {
+		&__photo {
+			@include mixins.flex;
+			img {
+				width: 60%;
+			}
+		}
+
+		&__text {
+			text-align: center;
+			margin-top: 3vh;
+			p {
+				font-size: 14px;
+				margin-bottom: 20px;
+			}
+		}
+	}
+	
+}

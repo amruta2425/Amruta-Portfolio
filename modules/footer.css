@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Playfair+Display:ital,wght@0,500;0,800;0,900;1,500;1,900&family=Spartan:wght@200;300;400;500&display=swap");
+/* SCSS HEX */
+.footer {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 20px 0;
+  margin: auto;
+}
+.footer__email {
+  margin-bottom: 10px;
+}
+.footer__email__link {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Cutive Mono", monospace;
+}
+.footer__email__link--font-sm {
+  font-size: 12px;
+}
+.footer__email__link--font-md {
+  font-size: 22px;
+}
+.footer__email__link--font-lg {
+  font-size: 70px;
+}
+.footer__links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-bottom: 10px;
+}
+.footer__links__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+.footer__links__item:hover {
+  color: #081b29;
+}
+.footer__info p {
+  font-family: "Cutive Mono", monospace;
+  color: #fff;
+}
+@media only screen and (max-width: 770px) {
+  .footer__email {
+    margin-bottom: 5px;
+  }
+  .footer__email__link {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Cutive Mono", monospace;
+  }
+  .footer__email__link--font-sm {
+    font-size: 12px;
+  }
+  .footer__email__link--font-md {
+    font-size: 22px;
+  }
+  .footer__email__link--font-lg {
+    font-size: 70px;
+  }
+  .footer__links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 5px;
+  }
+  .footer__links__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+  }
+  .footer__links__item:hover {
+    color: lightblue;
+  }
+  .footer__info p {
+    font-family: "Cutive Mono", monospace;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .footer {
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=footer.css.map */

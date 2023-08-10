@@ -1,0 +1,23 @@
+@use "./mixins.scss";
+@use "../partials/colors";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body {
+	min-height: 100vh;
+	background-color: colors.$pale-violet-red;
+	color: colors.$white;
+}
+
+p {
+	font-family: "Spartan", sans-serif;
+}
+
+a {
+	@include mixins.link-styling;
+}

@@ -1,0 +1,110 @@
+@use "./../partials/colors";
+
+@mixin link-styling {
+	text-decoration: none;
+	color: colors.$white;
+}
+
+@mixin project-styling-one {
+	padding: 2% 3%;
+	border-bottom: 2px solid colors.$white;
+	margin-bottom: 1.5rem;
+
+	&--right {
+		border-radius: 0.3rem;
+		width: 500px;
+		height: auto;
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+			rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+	}
+
+	&--left {
+		width: 50%;
+	}
+}
+
+@mixin project-styling-two {
+	padding: 2% 6%;
+	border-bottom: 2px solid colors.$white;
+
+	&--right {
+		width: 50%;
+	}
+
+	&--left {
+		border-radius: 0.3rem;
+		width: 500px;
+		height: auto;
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+			rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+	}
+}
+
+@mixin project-styling-phone-left {
+	border-bottom: 2px solid colors.$white;
+	text-align: center;
+	font-size: 14px;
+	margin-bottom: 1.5rem;
+
+	&--right {
+		border-radius: 0.3rem;
+		width: 80%;
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+			rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+			rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+		margin: 2rem 0;
+	}
+
+	&--left {
+		margin: 10px;
+		width: 100%;
+	}
+}
+
+@mixin project-styling-phone-right {
+	border-bottom: 2px solid colors.$white;
+	text-align: center;
+	font-size: 14px;
+	margin-bottom: 1.5rem;
+
+	&--right {
+		margin: 10px;
+		width: 100%;
+	}
+
+	&--left {
+		border-radius: 0.3rem;
+		width: 90%;
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+			rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+			rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+		margin: 2rem 0;
+	}
+}
+
+@mixin flex(
+	$just-cont: center,
+	$align-itm: center,
+	$flx-dir: row,
+	$flx-wp: nowrap
+) {
+	display: flex;
+	justify-content: $just-cont;
+	align-items: $align-itm;
+	flex-direction: $flx-dir;
+	flex-wrap: $flx-wp;
+}
+
+@mixin font-sizing($sm: 12px, $md: 22px, $lg: 70px) {
+	&--font-sm {
+		font-size: $sm;
+	}
+
+	&--font-md {
+		font-size: $md;
+	}
+
+	&--font-lg {
+		font-size: $lg;
+	}
+}

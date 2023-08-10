@@ -1,0 +1,76 @@
+@use "./../partials/colors";
+@use "./../partials/device";
+@use "./mixins.scss";
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Playfair+Display:ital,wght@0,500;0,800;0,900;1,500;1,900&family=Spartan:wght@200;300;400;500&display=swap");
+
+.project {
+	&__one {
+		@include mixins.flex($just-cont: space-between, $flx-dir: row-reverse);
+		@include mixins.project-styling-one;
+	}
+
+	&__two {
+		@include mixins.flex($just-cont: space-between);
+		@include mixins.project-styling-two;
+	}
+
+	&__three {
+		@include mixins.flex($just-cont: space-between, $flx-dir: row-reverse);
+		@include mixins.project-styling-one();
+	}
+
+	&__four {
+		@include mixins.flex($just-cont: space-between);
+		@include mixins.project-styling-two;
+	}
+
+	&__button {
+		margin-top: 15px;
+
+		&__item {
+			font-size: 45px;
+			padding: 0 5px;
+			transition: all 0.3s ease;
+
+			&:hover {
+				color: colors.$purple-navy;
+			}
+		}
+	}
+
+	@media only screen and (max-width: device.$tablet) {
+		&__one {
+			@include mixins.flex($flx-dir: column);
+			@include mixins.project-styling-phone-left();
+		}
+
+		&__two {
+			@include mixins.flex($flx-dir: column);
+			@include mixins.project-styling-phone-right();
+		}
+
+		&__three {
+			@include mixins.flex($flx-dir: column);
+			@include mixins.project-styling-phone-left();
+		}
+
+		&__four {
+			@include mixins.flex($flx-dir: column);
+			@include mixins.project-styling-phone-right();
+		}
+
+		&__button {
+			margin-top: 10px;
+
+			&__item {
+				@include mixins.link-styling;
+				padding: 0 5px;
+				font-size: 45px;
+
+				&:hover {
+					color: colors.$purple-navy;
+				}
+			}
+		}
+	}
+}
