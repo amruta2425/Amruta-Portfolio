@@ -1,7 +1,5 @@
 # Amruta-Portfolio
 
-# Website Portfolio
-
 This is an ongoing project of my website portfolio. The website has a responsive
 design to mobile, tablet, and computer screen sizes.
 
